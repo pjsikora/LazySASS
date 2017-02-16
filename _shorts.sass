@@ -1,0 +1,304 @@
+$UNIT_REM: true // pixels / rems
+
+@function _countUnits($value)
+  @if ($UNIT_REM)
+    $rem: $value / 16px
+    @return #{$rem}rem
+  @else
+    @return $value
+
+//@function remCalcC($value)
+//  $rem: $value / 16px
+//  @return #{$rem}rem
+
+
+
+// =============================
+// =============================
+// TEXT-DECORATION
+// =============================
+// =============================
+=tdn
+  text-decoration: none
+
+=tdu
+  text-decoration: underline
+
+=w($value)
+  width: _countUnits($value)
+
+=w100p
+  width: 100%
+
+=w80p
+  width: 80%
+
+=w50p
+  width: 50%
+
+=wa
+  width: auto
+
+=h($value)
+  height: _countUnits($value)
+
+=h100p
+  height: 100%
+
+=h80p
+  height: 80%
+
+=h50p
+  height: 50%
+
+// =============================
+// =============================
+// FONT
+// =============================
+// =============================
+// +ff($value) => font-family: $value
+// +fz($value) => font-size: $value
+// +fw($value) => font-weight: $value
+// =============================
+=ff($value)
+  font-family: $value
+
+=fz($value)
+  font-size: _countUnits($value)
+
+=fw($value)
+  font-weight: $value
+
+
+// =============================
+// =============================
+// TEXT-ALIGN
+// =============================
+// =============================
+=tac
+  text-align: center
+
+=tar
+  text-align: right
+
+=tal
+  text-align: left
+
+
+// =============================
+// =============================
+// TEXT-TRANSFORM
+// =============================
+// =============================
+// +ttu => text-transform: uppercase
+// +ttl => text-transform: lowercase
+// +ttc => text-transform: capitalize
+// +ttn => text-transform: none
+// =============================
+=ttu
+  text-transform: uppercase
+
+=ttl
+  text-transform: lowercase
+
+=ttc
+  text-transform: capitalize
+
+=ttn
+  text-transform: none
+
+// =============================
+// =============================
+// DISPLAY
+// =============================
+// =============================
+// +di => display: inline
+// +db => display: block
+// +dib => display: inline-block
+// =============================
+=di
+  display: inline
+
+=db
+  display: block
+
+=dib
+  display: inline-block
+
+
+// =============================
+// =============================
+// COLOR
+// =============================
+// =============================
+// +c($value) => color: $value
+// +cr($r, $g, $b) => color: rgba($r, $g, $b)
+// +cra($r, $g, $b, $a) => color: rgba($r, $g, $b, $a)
+//
+// +op($value) => opacity: $value
+// =============================
+=c($value)
+  color: $value
+
+=cr($r, $g, $b)
+  color: rgb($r, $g, $b)
+
+=cra($r, $g, $b, $a)
+  color: rgba($r, $g, $b, $a)
+
+=op($value)
+  opacity: $value
+
+
+// =============================
+// =============================
+// MARGIN
+// =============================
+// =============================
+=m($value)
+  margin: _countUnits($value)
+
+=m0a
+  margin: 0 auto
+
+=mt($value)
+  margin-top: _countUnits($value)
+
+=ml($value)
+  margin-left: _countUnits($value)
+
+=mr($value)
+  margin-right: _countUnits($value)
+
+=mb($value)
+  margin-bottom: _countUnits($value)
+
+
+//=m($top, $right, $bottom, $left)
+  //@if variable-exists($left) AND variable-exists($bottom) AND variable-exists($right) AND variable-exists($top)
+  //  +mt($top)
+  //  +mb($bottom)
+  //  +ml($left)
+  //  +mr($right)
+  //@if variable-exists($left) AND variable-exists($bottom) AND variable-exists($right) AND variable-exists($top)
+  //  +mt($top)
+  //  +mb($bottom)
+  //  +ml($left)
+  //  +mr($right)
+
+// =============================
+// =============================
+// PADDING
+// =============================
+// =============================
+// +p($value) => padding: $value
+// +pt($value) => padding-top: $value
+// +pr($value) => padding-right: $value
+// +pb($value) => padding-bottom: $value
+// +pl($value) => padding-left: $value
+// =============================
+=p($value)
+  padding: _countUnits($value)
+
+=pt($value)
+  padding:
+    top: _countUnits($value)
+
+=pr($value)
+  padding:
+    right: _countUnits($value)
+
+=pb($value)
+  padding:
+    bottom: _countUnits($value)
+
+=pl($value)
+  padding:
+    left: _countUnits($value)
+
+// =============================
+// =============================
+// POSITION
+// =============================
+// =============================
+// +posr => position: relative
+// +posa => position: absolute
+// +posf => position: fixed
+//
+// +t($value) => top: $value
+// +r($value) => right: $value
+// +b($value) => bottom: $value
+// +l($value) => left: $value
+//
+// +t50p => top: 50%
+// +l50p => left: 50%
+// =============================
+=posr
+  position: relative
+
+=posa
+  position: absolute
+
+=posf
+  position: fixed
+
+=t($value)
+  top: _countUnits($value)
+
+=l($value)
+  left: _countUnits($value)
+
+=r($value)
+  right: _countUnits($value)
+
+=b($value)
+  bottom: _countUnits($value)
+
+=z($value)
+  z-index: $value
+
+=t50p
+  top: 50%
+
+=l50p
+  left: 50%
+
+// =============================
+// =============================
+// FLOAT
+// =============================
+// =============================
+// +fl => float: left
+// +fr => float: right
+// +fn => float: none
+// =============================
+=fl
+  float: left
+
+=fr
+  float: right
+
+=fn
+  float: none
+
+// =============================
+// =============================
+// OVERFLOW
+// =============================
+// =============================
+// +ovh => overflow: hidden
+// +ova => overflow: auto
+// +ovs => overflow: scroll
+// +ovv => overflow: visible
+// =============================
+=ovh
+  overflow: hidden
+
+=ova
+  overflow: auto
+
+=ovs
+  overflow: scroll
+
+=ovv
+  overflow: visible
